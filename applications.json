@@ -1,0 +1,23 @@
+[
+    {
+        "company": "Amazon",
+        "role": "SDE",
+        "status": "Rejected",
+        "applied_date": "04-20-2026",
+        "follow_up_date": ""
+    },
+    {
+        "company": "Google",
+        "role": "Project Manager",
+        "status": "Applied",
+        "applied_date": "04-12-2026",
+        "follow_up_date": "04-20-2026"
+    },
+    {
+        "company": "Meta",
+        "role": "Technical Manager",
+        "status": "Interview",
+        "applied_date": "03-20-2026",
+        "follow_up_date": "04-10-2026"
+    }
+]

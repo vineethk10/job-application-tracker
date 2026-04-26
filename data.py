@@ -1,32 +1,24 @@
-ALLOWED_STATUSES = ["Applied", "Interview", "Rejected", "Offer"]
+import json
+import os
 
-applications = [
-    {
-        "company": "Google",
-        "role": "Software Engineer",
-        "date_applied": "2026-04-18",
-        "status": "Applied",
-        "follow_up": True
-    },
-    {
-        "company": "Amazon",
-        "role": "Data Analyst",
-        "date_applied": "2026-04-15",
-        "status": "Interview",
-        "follow_up": True
-    },
-    {
-        "company": "Microsoft",
-        "role": "Backend Developer",
-        "date_applied": "2026-04-10",
-        "status": "Rejected",
-        "follow_up": False
-    },
-    {
-        "company": "Stripe",
-        "role": "Python Developer",
-        "date_applied": "2026-04-12",
-        "status": "Offer",
-        "follow_up": False
-    }
-]
+FILE_NAME = "applications.json"
+
+applications = []
+
+STATUSES = ["Applied", "Interview", "Offer", "Rejected", "Follow-up"]
+
+
+def load_applications():
+    if not os.path.exists(FILE_NAME):
+        return
+
+    with open(FILE_NAME, "r") as file:
+        loaded_applications = json.load(file)
+
+    applications.clear()
+    applications.extend(loaded_applications)
+
+
+def save_applications():
+    with open(FILE_NAME, "w") as file:
+        json.dump(applications, file, indent=4)
